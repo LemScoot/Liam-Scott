@@ -1,0 +1,33 @@
+void setup() {
+        size(200,200);
+}
+
+void draw() {
+        background(255);
+        line(0,100,width,100);
+        ellipse(mouseX,100,10,10);
+        fill(0);
+        textAlign(CENTER);
+        text("Value:" + mouseX,mouseX,85);
+        text("Metric To Imperial:\n" + metToImp(mouseX),width/2,150);
+        text("Imperial To Metric:\n" + impToMet(mouseX),width/2,50);
+        for(int i=0; i<width; i+=10) {
+            line(i,95,i,105);
+            fill(0);
+            textSize(10);
+            text(60,i,width+5+i);
+            text("Instructions: Move the mouse across the \nscreen",100,180);
+            text("Metric To Imperial Convertor\n by: Liam Scott",100,20);
+        }
+
+}
+
+float metToImp(float val) {
+        val = (val+.45)*(2.2);
+        return val;
+}
+
+float impToMet(float val) {
+        val = (val*2.2)/(.45);
+        return val;
+}
